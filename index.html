@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamasutra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="screen_start">
+        <div class="avatar-picking">
+            <div class="boy">
+                <img src="./images/boy-logo.png" alt="man">
+                <input type="text" placeholder="Imię" id="man">
+            </div>
+            <div class="girl">
+                <img src="./images/girl-logo.png" alt="woman">
+                <input type="text" placeholder="Imię" id="woman">
+            </div>
+        </div>
+
+        <div class="start-button">
+            <input type="button" value="DALEJ" onclick="take_names()">
+        </div>
+    </div> 
+
+    <div class="container-options" id="screen_options">
+        <div class="player-list">
+            <span><img src="./images/boy-logo.png" alt="boy"><p id="man_output">[name]</p> </span>
+            <span><img src="./images/girl-logo.png" alt="girl"><p id="woman_output">[name]</p></span>
+        </div>
+        <div class="options-list">
+            <form>   
+                <span id="round_time_box">
+                    <label>Czas rundy (s)</label><input type="number" id="round_time" value="10">
+                </span>
+
+                <span id="time_between_round_box">
+                    <label>Czas między rundami (s)</label><input type="number" value="10" id="break_time_input">
+                </span>          
+            </form>
+        </div>
+        <div class="next-button">
+            <input type="button" value="START" onclick="start_game()">
+        </div>
+    </div>
+
+    <div class="container-counting" id="screen_counting">
+        <span id="counting">5</span>
+    </div>
+
+    <div class="container-game" id="screen_game">
+        <div class="box-round-time">
+            <div class="box-timer">
+                <span id="timer">--:--</span>
+            </div>
+            <div class="box-round">
+                <span>Runda: <span id="round">0</span></span>
+            </div>
+        </div>
+
+        <div class="box-position-name">
+            <span id="position-name">POZYCJA <br><span id="position-full-name"></span></span>
+        </div>
+
+        <div class="box-image">
+            <div class="main-image">
+                <img src="" alt="" id="main-image"><span class="pause" id="pause"><img src="./images/pause.png" alt="" onclick="earlyPlay()"></span>
+            </div>
+
+        </div>
+
+        <div class="box-end-skip">
+            <div class="end">
+                <input type="button" value="KONIEC" id="end" onclick="endGame()">
+            </div>
+            <div class="skip">
+                <input type="button" value="POMIŃ" id="skip" onclick="skip()">
+            </div>
+        </div>
+        
+
+    </div>
+
+    <div class="container-ending-screen" id="ending-container">
+        <div class="end-title">
+            <h1>GRATULACJE!</h1>
+            <h2><span id="men-end"></span> i <span id="woman-end"></span></h2>
+            <h2>KIEDY BRA<span style="color:rgb(255, 170, 0)">ZZ</span>ERS BRACHU?</h2>
+        </div>
+        <div class="last-position">
+            <h2>
+                OSTATNIA POZYCJA: 
+                <br> 
+                <span id="ending-position-title"></span>
+            </h2>
+            <img src="./positions/12.png" alt="" id="last-position-image">
+        </div>
+        <div class="waves-cleared">
+            <h2>WYTRZYMANYCH RUND: </h2>
+            <h2><span id="max-round-counter" style="color:orange"> 00</span></h2>
+            
+        </div>
+        <div class="again">
+            <h1>JESZCZE RAZ?</h1>
+            <a href="./index.html"><input type="button" value="DAWAJ!"></a>
+
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
